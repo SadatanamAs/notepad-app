@@ -1,0 +1,31 @@
+
+
+[project]
+name = "notepad-app"
+version = "0.1.0"
+
+[tool.commitizen]
+name = "cz_conventional_commits"
+version = "0.1.0"
+tag_format = "v"
+version_files = [
+    "pyproject.toml:version",
+    "app/__init__.py:__version__"
+]
+update_changelog_on_bump = true
+changelog_incremental = true
+changelog_file = "CHANGELOG.md"
+
+[tool.commitizen.change_type_map]
+feat = "Added"
+fix = "Fixed"
+refactor = "Changed"
+chore = "Maintenance"
+docs = "Documentation"
+test = "Testing"
+
+[tool.black]
+line-length = 88
+
+[tool.isort]
+profile = "black"

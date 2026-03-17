@@ -1,0 +1,25 @@
+name: pre-commit
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  pre-commit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up latest Python 3
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3"
+
+      - name: Setup pre-commit
+        uses: pre-commit/action@v4.5.1
+
+      - name: Run pre-commit hooks
+        run: pre-commit run --all-files
