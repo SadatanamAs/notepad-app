@@ -19,7 +19,7 @@ jobs:
           python-version: "3"
 
       - name: Setup pre-commit
-        uses: pre-commit/action@v4.5.1
+        uses: pre-commit/action@v3.0.1
 
       - name: Run pre-commit hooks
         run: pre-commit run --all-files
